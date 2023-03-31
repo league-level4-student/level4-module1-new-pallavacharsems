@@ -39,7 +39,13 @@ public class ExceptionsDemo {
     public static void main(String[] args) {
 
         // 1. Create a try/catch block (Hint: type "try" and ctrl + space).
-
+try {
+	testFiveOrGreater(4);
+} catch (Exception e) {
+	// TODO: handle exception
+	e.printStackTrace();
+	
+}
         /*
          * 2. Call the testFiveOrGreater method with a value less than 5 inside
          * the try block.
@@ -52,7 +58,7 @@ public class ExceptionsDemo {
          */
 
         // 4. Run the program. Did the stack trace print out?
-
+//yes
     }
 
     /*
@@ -87,7 +93,7 @@ public class ExceptionsDemo {
      * 
      * 10. Try running the program. Did it show a pop-up?
      */
-
+//yes
     /*
      * 11. Add a finally block after your catch block(Hint: finally{}). A
      * finally block always occurs after a try/catch block even if no exception
@@ -99,4 +105,5 @@ public class ExceptionsDemo {
      * 13. Try running the program with values that both throw and don't throw
      * exceptions.
      */
+    //done
 }
