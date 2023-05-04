@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class NegativeNumberException extends Exception{
 	public static void scaryPopup() {
-		JOptionPane.showMessageDialog(null, "You have triggered a triggered critical error in your computer!");
+		JOptionPane.showMessageDialog(null, "You have triggered a critical error in your computer!");
 	}
 	
 	
