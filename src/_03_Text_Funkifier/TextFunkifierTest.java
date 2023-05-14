@@ -44,6 +44,7 @@ public class TextFunkifierTest {
 
     @Test
     public void testCustomString() {
-
+    	SpaceString ss = new SpaceString("thisisalsoatest");
+        assertEquals("t h i s i s a l s o a t e s t", ss.funkifyText());
     }
 }
