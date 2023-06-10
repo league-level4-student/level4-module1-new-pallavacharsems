@@ -1,6 +1,7 @@
 package _05_Polymorphs;
 
 import java.awt.Color;
+
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -11,6 +12,7 @@ import java.util.Iterator;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import java.awt.event.MouseMotionListener;
 
 /*
  * 1. Create new member variables for the width and height of Polymorph then 
@@ -61,6 +63,10 @@ public class PolymorphWindow extends JPanel implements ActionListener {
 
     private JFrame window;
     private Timer timer;
+RedPolymorph red;
+BluePolymorph blue;
+MovingMorph move;
+MouseFollow follow;
 
    ArrayList<Polymorph> bunch;
 
@@ -76,9 +82,16 @@ public class PolymorphWindow extends JPanel implements ActionListener {
         window.pack();
         window.setVisible(true);
         bunch = new ArrayList<Polymorph>();
-        for (int i = 0; i < bunch.size(); i++) {
-		bunch.add(null)
-	}
+        red = new RedPolymorph(50, 50, 54, 55);
+        blue = new BluePolymorph(300, 300, 30, 30);
+		move = new MovingMorph(150, 150, 20, 20);
+		follow = new MouseFollow(500, 500, 20, 20);
+		bunch.add(red);
+		bunch.add(blue);
+		bunch.add(move);
+		bunch.add(follow);
+		
+		window.addMouseMotionListener((MouseMotionListener) bunch.get(3));
        
 
         timer = new Timer(1000 / 30, this);
@@ -89,6 +102,15 @@ public class PolymorphWindow extends JPanel implements ActionListener {
         // draw background
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(0, 0, 500, 500);
+        for (int i = 0; i < bunch.size(); i++) {
+        	
+        	
+            bunch.get(i).draw(g);
+          
+    		
+    		
+    		
+    	}
 
         // draw polymorph
             }
@@ -96,7 +118,14 @@ public class PolymorphWindow extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         repaint();
+for (int i = 0; i < bunch.size(); i++) {
+        	
+	 bunch.get(i).update();
         
+    		
+    		
+    	}
+       
 
     }
 }
