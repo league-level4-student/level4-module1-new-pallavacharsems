@@ -67,6 +67,7 @@ RedPolymorph red;
 BluePolymorph blue;
 MovingMorph move;
 MouseFollow follow;
+ClickMorph click;
 
    ArrayList<Polymorph> bunch;
 
@@ -86,12 +87,14 @@ MouseFollow follow;
         blue = new BluePolymorph(300, 300, 30, 30);
 		move = new MovingMorph(150, 150, 20, 20);
 		follow = new MouseFollow(500, 500, 20, 20);
+		click = new ClickMorph(600, 600, 20, 20);
 		bunch.add(red);
 		bunch.add(blue);
 		bunch.add(move);
 		bunch.add(follow);
-		
+		bunch.add(click);
 		window.addMouseMotionListener((MouseMotionListener) bunch.get(3));
+		window.addMouseListener(click);
        
 
         timer = new Timer(1000 / 30, this);

@@ -38,13 +38,13 @@ public class ClickMorph extends Polymorph implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		JOptionPane.showMessageDialog(null, "Click!");
+		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		JOptionPane.showMessageDialog(null, "Click!");
 	}
 
 	@Override
