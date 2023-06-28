@@ -7,9 +7,6 @@ public class GeneralPractitioner extends Doctor {
 		return true;
 	}
 
-	public boolean performsSurgery() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 }

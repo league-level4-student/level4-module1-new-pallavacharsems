@@ -8,6 +8,7 @@ ArrayList<Patient> patients = new ArrayList<>();
 	public void addDoctor(Doctor doctor) {
 		// TODO Auto-generated method stub
 	doctors.add(doctor);
+	
 	}
 
 	public void addPatient(Patient patient) {
@@ -28,6 +29,18 @@ ArrayList<Patient> patients = new ArrayList<>();
 
 	public void assignPatientsToDoctors() {
 		// TODO Auto-generated method stub
+		int currentDoctor = 0;
+		for (int i = 0; i < patients.size(); i++) {
+			if(doctors.get(currentDoctor).getPatients().size()>=3) {
+				currentDoctor++;
+			}
+			try {
+				doctors.get(currentDoctor).assignPatient(patients.get(i));
+			} catch (DoctorFullException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 	}
 
